@@ -25,3 +25,216 @@ Migrating to CreateMovies (20111119180638)
   [1m[35m (0.2ms)[0m  select sqlite_version(*)
   [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
   [1m[35m (0.0ms)[0m  PRAGMA index_list("movies")
+
+
+Started GET "/" for 127.0.0.1 at 2013-08-05 12:09:56 +0100
+  Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+Rendered movies/index.html.haml within layouts/application (79.4ms)
+Compiled application.css  (23ms)  (pid 2336)
+Compiled application.js  (36ms)  (pid 2336)
+Compiled jquery.js  (30ms)  (pid 2336)
+Compiled jquery_ujs.js  (23ms)  (pid 2336)
+Completed 200 OK in 393ms (Views: 391.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-08-05 12:09:59 +0100
+Served asset /application.js - 200 OK (4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-08-05 12:09:59 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-08-05 12:09:59 +0100
+Served asset /jquery_ujs.js - 200 OK (40ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-08-05 12:09:59 +0100
+Served asset /jquery.js - 200 OK (7ms)
+
+
+Started GET "/movies?id=title_header" for 127.0.0.1 at 2013-08-05 12:10:01 +0100
+  Processing by MoviesController#index as HTML
+  Parameters: {"id"=>"title_header"}
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies" 
+Completed 500 Internal Server Error in 8ms
+
+NoMethodError (undefined method `order' for #<Array:0xb5ab2ce0>):
+  app/controllers/movies_controller.rb:12:in `index'
+
+Rendered /home/ubuntu/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.9ms)
+Rendered /home/ubuntu/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.6ms)
+Rendered /home/ubuntu/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.8ms)
+
+
+Started GET "/movies?id=title_header" for 127.0.0.1 at 2013-08-05 12:10:47 +0100
+  Processing by MoviesController#index as HTML
+  Parameters: {"id"=>"title_header"}
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+Completed 500 Internal Server Error in 29ms
+
+ArgumentError (wrong number of arguments(1 for 0)):
+  app/controllers/movies_controller.rb:12:in `sort'
+  app/controllers/movies_controller.rb:12:in `index'
+
+Rendered /home/ubuntu/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+Rendered /home/ubuntu/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+Rendered /home/ubuntu/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (4.5ms)
+
+
+Started GET "/movies?id=title_header" for 127.0.0.1 at 2013-08-05 12:26:24 +0100
+
+SyntaxError (/home/ubuntu/rails-projects/hw2_rottenpotatoes/app/controllers/movies_controller.rb:13: syntax error, unexpected tIVAR
+...= @movies.sort! { |a,b| a.@sort.downcase <=> b.@sort.downcas...
+...                               ^
+/home/ubuntu/rails-projects/hw2_rottenpotatoes/app/controllers/movies_controller.rb:13: syntax error, unexpected tIVAR
+...b| a.@sort.downcase <=> b.@sort.downcase }
+...                               ^
+/home/ubuntu/rails-projects/hw2_rottenpotatoes/app/controllers/movies_controller.rb:16: syntax error, unexpected tIVAR
+...= @movies.sort! { |a,b| a.@sort.downcase <=> b.@sort.downcas...
+...                               ^
+/home/ubuntu/rails-projects/hw2_rottenpotatoes/app/controllers/movies_controller.rb:16: syntax error, unexpected tIVAR
+...b| a.@sort.downcase <=> b.@sort.downcase }
+...                               ^):
+  
+
+Rendered /home/ubuntu/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /home/ubuntu/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+Rendered /home/ubuntu/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (4.5ms)
+
+
+Started GET "/movies?id=title_header" for 127.0.0.1 at 2013-08-05 12:27:23 +0100
+  Processing by MoviesController#index as HTML
+  Parameters: {"id"=>"title_header"}
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies" 
+Rendered movies/index.html.haml within layouts/application (5.4ms)
+Completed 200 OK in 18ms (Views: 11.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-08-05 12:27:23 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-08-05 12:27:23 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-08-05 12:27:23 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-08-05 12:27:23 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/movies?id=title_header" for 127.0.0.1 at 2013-08-05 12:27:26 +0100
+  Processing by MoviesController#index as HTML
+  Parameters: {"id"=>"title_header"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+Rendered movies/index.html.haml within layouts/application (5.4ms)
+Completed 200 OK in 17ms (Views: 10.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-08-05 12:27:26 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-08-05 12:27:26 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-08-05 12:27:26 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-08-05 12:27:26 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/movies?id=release_date_header" for 127.0.0.1 at 2013-08-05 12:27:31 +0100
+  Processing by MoviesController#index as HTML
+  Parameters: {"id"=>"release_date_header"}
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies" 
+Completed 500 Internal Server Error in 7ms
+
+NoMethodError (undefined method `downcase' for 1992-11-25 00:00:00 UTC:Time):
+  app/controllers/movies_controller.rb:16:in `block in index'
+  app/controllers/movies_controller.rb:16:in `sort!'
+  app/controllers/movies_controller.rb:16:in `index'
+
+Rendered /home/ubuntu/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /home/ubuntu/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+Rendered /home/ubuntu/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (4.3ms)
+
+
+Started GET "/movies?id=release_date_header" for 127.0.0.1 at 2013-08-05 12:28:04 +0100
+  Processing by MoviesController#index as HTML
+  Parameters: {"id"=>"release_date_header"}
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+Rendered movies/index.html.haml within layouts/application (4.9ms)
+Completed 200 OK in 19ms (Views: 9.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-08-05 12:28:04 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-08-05 12:28:04 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-08-05 12:28:04 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-08-05 12:28:04 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/movies?id=title_header" for 127.0.0.1 at 2013-08-05 12:28:07 +0100
+  Processing by MoviesController#index as HTML
+  Parameters: {"id"=>"title_header"}
+  [1m[35mMovie Load (0.1ms)[0m  SELECT "movies".* FROM "movies" 
+Rendered movies/index.html.haml within layouts/application (7.5ms)
+Completed 200 OK in 48ms (Views: 12.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-08-05 12:28:07 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-08-05 12:28:07 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-08-05 12:28:07 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-08-05 12:28:07 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/movies?id=release_date_header" for 127.0.0.1 at 2013-08-05 12:28:12 +0100
+  Processing by MoviesController#index as HTML
+  Parameters: {"id"=>"release_date_header"}
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+Rendered movies/index.html.haml within layouts/application (5.2ms)
+Completed 200 OK in 17ms (Views: 10.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-08-05 12:28:12 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-08-05 12:28:12 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-08-05 12:28:12 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-08-05 12:28:12 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
