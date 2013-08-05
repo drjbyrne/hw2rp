@@ -7,14 +7,7 @@ class MoviesController < ApplicationController
   end
 
   def index
-    @movies = Movie.find(:all)
-    if params[:id] == "title_header"
-      @sort = "title"
-      @movies = @movies.sort! { |a,b| a.title.downcase <=> b.title.downcase }
-    elsif params[:id] == "release_date_header"
-      @sort = "release_date"
-      @movies = @movies.sort! { |a,b| a.release_date <=> b.release_date }
-    end
+    @movies = Movie.order(params[:sort]).find(:all)
   end
 
   def new
